@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить задачу</title>
+</head>
+<body>
+    <h1>Добавить задачу</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="description">Описание:</label>
+        <input type="text" name="description" id="description" required><br>
+        <label for="status">Статус:</label>
+        <select name="status" id="status">
+            <option value="new">Новая</option>
+            <option value="in_progress">В процессе</option>
+            <option value="done">Сделано</option>
+        </select><br>
+        <label for="due_date">Дата выполнения:</label>
+        <input type="date" name="due_date" id="due_date"><br>
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="{% url 'task_list' %}">Вернуться к списку</a>
+</body>
+</html>
