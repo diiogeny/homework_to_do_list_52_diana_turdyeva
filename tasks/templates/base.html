@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}To-Do List{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="{% url 'task_list' %}">Главная</a></li>
-                <li><a href="{% url 'add_task' %}">Добавить задачу</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        {% block content %}
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2024 To-Do List</p>
-    </footer>
 </body>
 </html>
