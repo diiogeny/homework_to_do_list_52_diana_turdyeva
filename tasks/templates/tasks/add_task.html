@@ -4,17 +4,9 @@
 
 {% block content %}
 <h1>Добавить задачу</h1>
-<form method="POST">
+<form method="post">
     {% csrf_token %}
-    <label for="title">Название:</label>
-    <input type="text" id="title" name="title" required>
-
-    <label for="description">Описание:</label>
-    <textarea id="description" name="description"></textarea>
-
-    <label for="due_date">Дата выполнения:</label>
-    <input type="date" id="due_date" name="due_date">
-
-    <button type="submit">Добавить</button>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Добавить</button>
 </form>
 {% endblock %}
