@@ -1,20 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}To-Do List{% endblock %}</title>
+    <title>Список задач</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'task_list' %}">Главная</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+
+    <a href="/" class="nav-link">Главная</a>
+    <h1>Список задач</h1>
+
+    <div class="tasks">
+        {% for task in tasks %}
+            <div class="task">{{ task.title }}</div>
+        {% empty %}
+            <p>Нет задач</p>
+        {% endfor %}
+    </div>
+
+    <a href="/add" class="add-task">Добавить задачу</a>
+    <form method="post" action="/add/">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
 </body>
 </html>
