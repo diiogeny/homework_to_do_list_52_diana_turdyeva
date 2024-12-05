@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% include 'tasks/form_template.html' %}
+<a href="{% url 'task_list' %}">Назад к списку</a>
+{% endblock %}

@@ -1,0 +1,158 @@
+body {
+    background-color: #FFC0CB;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 48px;
+    color: #FF69B4;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 36px;
+    color: #FF69B4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+}
+
+.tasks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.task {
+    background-color: #FFF;
+    border-radius: 50px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px 40px;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.task:hover {
+    transform: scale(1.1);
+}
+
+.add-task {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    background-color: #FFF;
+    padding: 10px 30px;
+    border-radius: 25px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.add-task:hover {
+    background-color: #FFD1DC;
+    transform: scale(1.1);
+}
+
+.nav-link {
+    display: inline-block;
+    background-color: #FFF;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.nav-link:hover {
+    background-color: #FFD1DC;
+    transform: scale(1.1);
+}
+
+.cloud {
+    position: absolute;
+    background-image: url('/static/images/clouds.png');
+    background-size: cover;
+    width: 150px;
+    height: 100px;
+    opacity: 0.7;
+    z-index: 0;
+    animation: float 5s infinite ease-in-out;
+}
+
+.cloud-1 {
+    top: 50px;
+    left: 20px;
+    animation-delay: 0s;
+}
+
+.cloud-2 {
+    top: 100px;
+    right: 50px;
+    animation-delay: 1s;
+}
+
+.cloud-3 {
+    bottom: 120px;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.cloud-4 {
+    top: 300px;
+    left: 10%;
+    animation-delay: 3s;
+}
+
+.cloud-5 {
+    top: 20px;
+    right: 10%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.messages {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
